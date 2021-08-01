@@ -1,0 +1,87 @@
+.filter-menu {
+	display: flex;
+	padding: 4px 0px;
+	flex-direction: row;
+	border: 1px solid @accent;
+	.rounded(35px);
+	.lg();
+
+	@media (max-width: @md3) {
+		flex-direction: column;
+		padding: 0;
+		border: none;
+	}
+	
+}
+
+.filter-menu__button {
+	padding: 17px 45px;
+	text-transform: uppercase;
+	color: @accent;
+	cursor: pointer;
+	text-align: center;
+	border-right: 1px solid @accent;
+	
+	.transition(0.25s, ease-in-out);
+
+	&:hover, &:active, &:focus {
+		background-color: @accent;
+		color: @text--light;
+		transform: scale(1.05, 1.2);
+		.rounded(10px);
+	}
+
+	&:first-child {
+		.border-radius(0px, 0px, 35px, 35px);
+
+		&:hover, &:active, &:focus {
+			.border-radius(10px, 10px, 35px, 35px);
+		}
+	}
+
+	&:last-child {
+		.border-radius(35px, 35px, 0px, 0px);
+		border-right: none;
+
+		&:hover, &:active, &:focus {
+			.border-radius(35px, 35px, 10px, 10px);
+		}
+	}
+
+	@media (max-width: @md1) {
+		padding: 12px 25px;
+		font-size: 14px;
+	}
+
+	@media (max-width: @md3) {
+		margin: 0px 0px 20px 0px;
+		padding: 10px 25px;
+		border: 1px solid @accent;
+		&:first-child {
+			.rounded(30px);
+
+			&:hover, &:active, &:focus {
+				.rounded(30px);
+			}
+		}
+		&:last-child {
+			.rounded(30px);
+			border-right: 1px solid @accent;
+
+			&:hover, &:active, &:focus {
+				.rounded(30px);
+			}
+		}
+
+		.rounded(30px);
+		
+		&:last-child {
+			margin: 0;
+		}
+
+		&:hover, &:active, &:focus {
+			transform: scale(1, 1);
+			.rounded(30px);
+		}
+	}
+}

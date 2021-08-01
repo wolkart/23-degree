@@ -1,0 +1,63 @@
+.btn {
+	display: inline-block;
+	background-color: @accent;
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	.transition(0.25s, ease-in-out);
+	.rounded(30px);
+	border: none;
+	&:hover, &:focus {
+		background-color: @btn-hover;
+	}
+	&:active {
+		background-color: @btn-active;
+	}
+	@media (min-width: 1200px) {
+		height: 50px;
+		line-height: 50px;
+		.rounded(30px);
+		.rg();
+	}
+}
+
+// <МЕНЮ БУРГЕР> ============================================
+.nav-burger {
+	position: relative;
+	display: block;
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+	height: 15px;
+	width: 46px;
+	cursor: pointer;
+	z-index: 10;
+	span {
+		position: absolute;
+		top: 6px;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		.rounded(3px);
+		background-color: #fff;
+		&:first-child {top: 0;}
+		&:last-child {top: auto;bottom: 0;}
+		.transition(0.8s, ease);
+	}
+	&.active {
+		position: fixed;
+		span {
+			background-color: @text;
+			.scale(0);
+			&:first-child {
+				.rotate(-45deg);
+				top: 6px;
+			}
+			&:last-child {
+				.rotate(45deg);
+				bottom: 6px;
+			}
+		}
+	}
+}
+// </МЕНЮ БУРГЕР> ============================================

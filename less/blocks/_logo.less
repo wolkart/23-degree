@@ -1,0 +1,25 @@
+.logo {
+	display: flex;
+	align-items: center;
+	
+	color: @text--light;
+	text-decoration: none;
+	font-size: 28px;
+	
+	img {
+		margin-right: 11px;
+		height: 60px;
+	}
+
+	span {
+		.bl();
+	}
+
+	@media (max-width: @md4) {
+		font-size: 20px;
+
+		img {
+			height: 40px;
+		}
+	}
+}

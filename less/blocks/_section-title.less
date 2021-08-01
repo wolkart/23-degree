@@ -1,0 +1,38 @@
+.section-title {
+	text-align: center;
+	margin: 0;
+	
+	font-size: 30px;
+	color: @title;
+	.lg();
+	
+	&::after {
+		content: "";
+		display: block;
+		max-width: 150px;
+		width: 100%;
+		height: 1px;
+		background-color: @accent;
+		margin: 12px auto 0;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 36px;
+	}
+
+	@media (min-width: 1200px) {
+		
+		&::after {
+			max-width: 377px;
+			margin: 19px auto 0;
+		}
+	}
+
+	&--light {
+		color: @text--light;
+		
+		&::after {
+			background-color: @text--light;
+		}
+	}
+}
